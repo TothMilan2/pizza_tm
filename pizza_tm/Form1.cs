@@ -51,43 +51,32 @@ namespace pizza_tm
             }
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkBox2_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int plusar = 0;
-            
-            int index = 0;
-          
-            for(int i = 0;i < p_nev.Count; i++)
+            int index=0;
+            string combo=comboBox1.SelectedItem.ToString();
+            string[] szabdalt = combo.Split(' ');
+            string pizzaneve = szabdalt[0];
+
+
+
+            for(int i = 0;i<p_nev.Count;i++)
             {
-                if (comboBox1.SelectedItem.ToString() == p_nev[i])
+                if (pizzaneve == p_nev[i] && radioButton2.Checked)
                 {
-                    index=i;
-            
-                    break;
+                    index = i;
+                    listBox1.Items.Add(p_nev[index]+' '+ p_ar[index]+' '+ p_forint[index]);
+
                 }
-                /*Szövegkezeléssel. 
-                 * Le kell vágni az ár részét és megkapom a pizza nevét, és utána mehet az index*/
+                /*Megcsinálni */
 
             }
-            plusar = Convert.ToInt32(numericUpDown1.Value) * p_ar[index];
-
-            listBox1.Items.Add(plusar);
-            if (radioButton2.Checked)
-            {
-                plusar += 400;
-            }
-            listBox1.Items.Add(plusar);
+            
 
         }
+
+
     }
 }
