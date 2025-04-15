@@ -52,6 +52,12 @@
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.button1 = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.szövegtípusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.háttérképToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.háttérszínToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fontDialog1 = new System.Windows.Forms.FontDialog();
+            this.colorDialog2 = new System.Windows.Forms.ColorDialog();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
@@ -64,82 +70,90 @@
             this.súgóToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 26);
+            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.menuStrip1.Size = new System.Drawing.Size(886, 27);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // fájlToolStripMenuItem
             // 
-            this.fájlToolStripMenuItem.BackColor = System.Drawing.Color.Red;
+            this.fájlToolStripMenuItem.BackColor = System.Drawing.Color.White;
             this.fájlToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mentésToolStripMenuItem,
             this.mentésMáskéntToolStripMenuItem,
             this.törlésToolStripMenuItem});
-            this.fájlToolStripMenuItem.Font = new System.Drawing.Font("Stencil", 11.25F, System.Drawing.FontStyle.Italic);
-            this.fájlToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.fájlToolStripMenuItem.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fájlToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.fájlToolStripMenuItem.Name = "fájlToolStripMenuItem";
-            this.fájlToolStripMenuItem.Size = new System.Drawing.Size(53, 22);
+            this.fájlToolStripMenuItem.Size = new System.Drawing.Size(43, 23);
             this.fájlToolStripMenuItem.Text = "Fájl";
             // 
             // mentésToolStripMenuItem
             // 
             this.mentésToolStripMenuItem.Name = "mentésToolStripMenuItem";
-            this.mentésToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.mentésToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
             this.mentésToolStripMenuItem.Text = "Mentés";
             this.mentésToolStripMenuItem.Click += new System.EventHandler(this.mentésToolStripMenuItem_Click);
             // 
             // mentésMáskéntToolStripMenuItem
             // 
             this.mentésMáskéntToolStripMenuItem.Name = "mentésMáskéntToolStripMenuItem";
-            this.mentésMáskéntToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.mentésMáskéntToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
             this.mentésMáskéntToolStripMenuItem.Text = "Mentés Másként";
             this.mentésMáskéntToolStripMenuItem.Click += new System.EventHandler(this.mentésMáskéntToolStripMenuItem_Click);
             // 
             // törlésToolStripMenuItem
             // 
             this.törlésToolStripMenuItem.Name = "törlésToolStripMenuItem";
-            this.törlésToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.törlésToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
             this.törlésToolStripMenuItem.Text = "Törlés";
             this.törlésToolStripMenuItem.Click += new System.EventHandler(this.törlésToolStripMenuItem_Click);
             // 
             // menüToolStripMenuItem
             // 
-            this.menüToolStripMenuItem.BackColor = System.Drawing.Color.Red;
+            this.menüToolStripMenuItem.BackColor = System.Drawing.Color.White;
             this.menüToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.rendelésToolStripMenuItem,
             this.kapcsolatToolStripMenuItem,
             this.névjegyToolStripMenuItem});
-            this.menüToolStripMenuItem.Font = new System.Drawing.Font("Stencil", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menüToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.menüToolStripMenuItem.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menüToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.menüToolStripMenuItem.Name = "menüToolStripMenuItem";
-            this.menüToolStripMenuItem.Size = new System.Drawing.Size(61, 22);
+            this.menüToolStripMenuItem.Size = new System.Drawing.Size(55, 23);
             this.menüToolStripMenuItem.Text = "Menü";
             // 
             // rendelésToolStripMenuItem
             // 
             this.rendelésToolStripMenuItem.Name = "rendelésToolStripMenuItem";
-            this.rendelésToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.rendelésToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.rendelésToolStripMenuItem.Text = "Rendelés";
+            this.rendelésToolStripMenuItem.Click += new System.EventHandler(this.rendelésToolStripMenuItem_Click);
             // 
             // kapcsolatToolStripMenuItem
             // 
+            this.kapcsolatToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.szövegtípusToolStripMenuItem,
+            this.háttérképToolStripMenuItem,
+            this.háttérszínToolStripMenuItem});
             this.kapcsolatToolStripMenuItem.Name = "kapcsolatToolStripMenuItem";
-            this.kapcsolatToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
-            this.kapcsolatToolStripMenuItem.Text = "Kapcsolat";
+            this.kapcsolatToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.kapcsolatToolStripMenuItem.Text = "Beállítások";
+            this.kapcsolatToolStripMenuItem.Click += new System.EventHandler(this.kapcsolatToolStripMenuItem_Click);
             // 
             // névjegyToolStripMenuItem
             // 
             this.névjegyToolStripMenuItem.Name = "névjegyToolStripMenuItem";
-            this.névjegyToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.névjegyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.névjegyToolStripMenuItem.Text = "Névjegy";
+            this.névjegyToolStripMenuItem.Click += new System.EventHandler(this.névjegyToolStripMenuItem_Click);
             // 
             // súgóToolStripMenuItem
             // 
-            this.súgóToolStripMenuItem.BackColor = System.Drawing.Color.Red;
-            this.súgóToolStripMenuItem.Font = new System.Drawing.Font("Stencil", 11.25F, System.Drawing.FontStyle.Italic);
-            this.súgóToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.súgóToolStripMenuItem.BackColor = System.Drawing.Color.White;
+            this.súgóToolStripMenuItem.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.súgóToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.súgóToolStripMenuItem.Name = "súgóToolStripMenuItem";
-            this.súgóToolStripMenuItem.Size = new System.Drawing.Size(57, 22);
+            this.súgóToolStripMenuItem.Size = new System.Drawing.Size(50, 23);
             this.súgóToolStripMenuItem.Text = "Súgó";
             // 
             // label1
@@ -148,11 +162,11 @@
             this.label1.BackColor = System.Drawing.Color.OldLace;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label1.Font = new System.Drawing.Font("Pristina", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(358, 24);
+            this.label1.Location = new System.Drawing.Point(351, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 41);
+            this.label1.Size = new System.Drawing.Size(104, 41);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Pizza";
+            this.label1.Text = "Pizzéria";
             // 
             // comboBox1
             // 
@@ -167,10 +181,12 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Pristina", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(73, 141);
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Pristina", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(22, 135);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(106, 27);
+            this.label2.Size = new System.Drawing.Size(157, 32);
             this.label2.TabIndex = 3;
             this.label2.Text = "Pizza választása";
             // 
@@ -184,30 +200,33 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Pristina", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(101, 183);
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Pristina", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(66, 175);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 27);
+            this.label3.Size = new System.Drawing.Size(109, 32);
             this.label3.TabIndex = 11;
             this.label3.Text = "Mennyiség";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Pristina", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(116, 230);
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Pristina", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(112, 227);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 27);
+            this.label4.Size = new System.Drawing.Size(67, 32);
             this.label4.TabIndex = 12;
             this.label4.Text = "Méret";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Pristina", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(99, 281);
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Pristina", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(66, 285);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(80, 27);
+            this.label5.Size = new System.Drawing.Size(113, 32);
             this.label5.TabIndex = 13;
             this.label5.Text = "Megjegyzés";
             // 
@@ -222,62 +241,88 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Pristina", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(596, 135);
+            this.label6.Font = new System.Drawing.Font("Pristina", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(599, 109);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(65, 27);
+            this.label6.Size = new System.Drawing.Size(71, 29);
             this.label6.TabIndex = 15;
             this.label6.Text = "Összegzés";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // listBox1
             // 
+            this.listBox1.BackColor = System.Drawing.Color.Silver;
+            this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(514, 168);
+            this.listBox1.Location = new System.Drawing.Point(510, 141);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(236, 199);
+            this.listBox1.Size = new System.Drawing.Size(234, 275);
             this.listBox1.TabIndex = 16;
             // 
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
+            this.radioButton1.BackColor = System.Drawing.Color.Transparent;
             this.radioButton1.Location = new System.Drawing.Point(208, 235);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(51, 17);
             this.radioButton1.TabIndex = 17;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "24cm";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.UseVisualStyleBackColor = false;
             // 
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
+            this.radioButton2.BackColor = System.Drawing.Color.Transparent;
             this.radioButton2.Location = new System.Drawing.Point(301, 235);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(51, 17);
             this.radioButton2.TabIndex = 18;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "32cm";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.UseVisualStyleBackColor = false;
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.LightGray;
+            this.button1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button1.Font = new System.Drawing.Font("Pristina", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Red;
-            this.button1.Location = new System.Drawing.Point(208, 387);
+            this.button1.Location = new System.Drawing.Point(194, 384);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(132, 36);
+            this.button1.Size = new System.Drawing.Size(158, 39);
             this.button1.TabIndex = 19;
             this.button1.Text = "Véglegesít";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // szövegtípusToolStripMenuItem
+            // 
+            this.szövegtípusToolStripMenuItem.Name = "szövegtípusToolStripMenuItem";
+            this.szövegtípusToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.szövegtípusToolStripMenuItem.Text = "Szövegtípus";
+            this.szövegtípusToolStripMenuItem.Click += new System.EventHandler(this.szövegtípusToolStripMenuItem_Click);
+            // 
+            // háttérképToolStripMenuItem
+            // 
+            this.háttérképToolStripMenuItem.Name = "háttérképToolStripMenuItem";
+            this.háttérképToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.háttérképToolStripMenuItem.Text = "Háttérkép";
+            // 
+            // háttérszínToolStripMenuItem
+            // 
+            this.háttérszínToolStripMenuItem.Name = "háttérszínToolStripMenuItem";
+            this.háttérszínToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.háttérszínToolStripMenuItem.Text = "Háttérszín";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(886, 446);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
@@ -329,6 +374,12 @@
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.ToolStripMenuItem szövegtípusToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem háttérképToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem háttérszínToolStripMenuItem;
+        private System.Windows.Forms.FontDialog fontDialog1;
+        private System.Windows.Forms.ColorDialog colorDialog2;
     }
 }
 

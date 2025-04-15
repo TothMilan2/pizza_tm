@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.IO;
+using System.IO.Ports;
 using System.Linq;
 using System.Security.Policy;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -29,7 +32,7 @@ namespace pizza_tm
                 using(StreamReader reader=new StreamReader(FilePath))
                 {
                     string line;
-                    reader.ReadLine();
+                    
                     while ((line = reader.ReadLine()) != null)
                     {
                         string[] adatok = line.Split('|');
@@ -52,20 +55,21 @@ namespace pizza_tm
                
             }
         }
+        
 
-       
 
         private void button1_Click(object sender, EventArgs e)
         {
             int index=0;
             string combo=comboBox1.SelectedItem.ToString();
+
             string[] szabdalt = combo.Split(' ');
-            string pizzaneve = szabdalt[0];
-            
 
+            string pizzaneve = string.Join(" ", szabdalt.Take(szabdalt.Length - 2));
 
+            //I give up there is no hope
 
-            for(int i = 0;i<p_nev.Count;i++)
+            for (int i = 0;i<p_nev.Count;i++)
             {
                 if (pizzaneve == p_nev[i] && radioButton2.Checked)
                 {
@@ -127,8 +131,51 @@ namespace pizza_tm
             saveFileDialog1.DefaultExt = "txt";
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             { // Fájl mentése a saveFileDialog1.FileName útvonalra
-                System.IO.File.WriteAllText(saveFileDialog1.FileName, "Mentett szöveg");
+                string megjegyzes = textBox1.Text.ToString();
+                string filePath2 = "rendeles.txt";
+                try
+                {
+                    using (StreamWriter writer = new StreamWriter(filePath2))
+                    {
+                        for (int i = 0; i < listBox1.Items.Count; i++)
+                        {
+                            writer.WriteLine(listBox1.Items[i]);
+                        }
+                        writer.WriteLine($"Megjegyzés: {megjegyzes}");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Helo");
+                }
             }
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void névjegyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+            
+        }
+
+        private void kapcsolatToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void szövegtípusToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rendelésToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            nevjegy form2 = new nevjegy();
+            form2.Show();
         }
     }
         
