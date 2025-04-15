@@ -18,6 +18,8 @@ namespace pizza_tm
         public static List <string> p_nev=new List <string> ();
         public static List <string> p_forint=new List <string> ();
         public static List <int> p_ar=new List <int> ();
+        int plusszar = 0;
+
         public Form1()
         {
             InitializeComponent();
@@ -59,6 +61,7 @@ namespace pizza_tm
             string combo=comboBox1.SelectedItem.ToString();
             string[] szabdalt = combo.Split(' ');
             string pizzaneve = szabdalt[0];
+            
 
 
 
@@ -66,17 +69,69 @@ namespace pizza_tm
             {
                 if (pizzaneve == p_nev[i] && radioButton2.Checked)
                 {
+                    plusszar = 400;
                     index = i;
-                    listBox1.Items.Add(p_nev[index]+' '+ p_ar[index]+' '+ p_forint[index]);
+                    int aktualisAr = p_ar[index] + plusszar;
+                    p_ar[index] += plusszar;
+                    listBox1.Items.Add("-"+p_nev[index]+' '+ aktualisAr+' '+ p_forint[index]+", "+"32cm");
+                    
 
                 }
-                /*Megcsinálni */
+                else if(pizzaneve == p_nev[i] && radioButton1.Checked)
+                {
+              
+                    index = i;
+
+
+                    listBox1.Items.Add("-"+p_nev[index] + ' ' + p_ar[index] + ' ' + p_forint[index] + ", " + "24cm");
+                }
+                /*Ha kettőt választunk ugyan abból a fajtából az árat tovább növeli */
 
             }
             
 
         }
 
+        private void mentésToolStripMenuItem_Click(object sender, EventArgs e)
+        {
 
+            string megjegyzes = textBox1.Text.ToString();
+            string filePath2 = "rendeles.txt";
+            try
+            {
+                using (StreamWriter writer = new StreamWriter(filePath2))
+                {
+                    for (int i = 0; i < listBox1.Items.Count; i++)
+                    {
+                        writer.WriteLine(listBox1.Items[i]);
+                    }
+                    writer.WriteLine($"Megjegyzés: {megjegyzes}");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Helo");
+            }
+        }
+
+        private void törlésToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mentésMáskéntToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Filter tulajdonság a menthető fájltípusok megadásához
+            saveFileDialog1.Filter = "Szöveges fájl (*.txt)|*.txt|Minden fájl (*.*)|*.*";
+            saveFileDialog1.FilterIndex = 1; //DefaultExt tulajdonságot az alapértelmezett fájlkiterjesztés megadásához
+            saveFileDialog1.DefaultExt = "txt";
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            { // Fájl mentése a saveFileDialog1.FileName útvonalra
+                System.IO.File.WriteAllText(saveFileDialog1.FileName, "Mentett szöveg");
+            }
+        }
     }
+        
+    
+    
 }
