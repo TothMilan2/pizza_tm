@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace pizza_tm
@@ -22,6 +23,7 @@ namespace pizza_tm
         public static List <string> p_forint=new List <string> ();
         public static List <int> p_ar=new List <int> ();
         int plusszar = 0;
+        public static string[] adatok = new string[0]; 
 
         public Form1()
         {
@@ -35,11 +37,11 @@ namespace pizza_tm
                     
                     while ((line = reader.ReadLine()) != null)
                     {
-                        string[] adatok = line.Split('|');
+                        adatok = line.Split('|');
                         p_nev.Add(adatok[0]);
                         p_ar.Add(Convert.ToInt32(adatok[1]));
                         p_forint.Add(adatok[2]);
-
+                        
 
 
                     }
@@ -63,25 +65,35 @@ namespace pizza_tm
             int index=0;
             string combo=comboBox1.SelectedItem.ToString();
 
-            string[] szabdalt = combo.Split(' ');
+            string name = adatok[0];
 
-            string pizzaneve = string.Join(" ", szabdalt.Take(szabdalt.Length - 2));
+            for(int i = 0;i < p_nev.Count; i++)
+            {
+                if (combo == p_nev[i])
+                {
+
+                    index = i;
+                    listBox1.Items.Add(p_nev[i]);
+                }
+            }
+            
+
+            
+
+            // Hozzáadjuk a ListBox-hoz
+           
 
             //I give up there is no hope
 
             for (int i = 0;i<p_nev.Count;i++)
             {
-                if (pizzaneve == p_nev[i] && radioButton2.Checked)
+                if (fullName == p_nev[i] && radioButton2.Checked)
                 {
-                    plusszar = 400;
-                    index = i;
-                    int aktualisAr = p_ar[index] + plusszar;
-                    p_ar[index] += plusszar;
-                    listBox1.Items.Add("-"+p_nev[index]+' '+ aktualisAr+' '+ p_forint[index]+", "+"32cm");
+                   
                     
 
                 }
-                else if(pizzaneve == p_nev[i] && radioButton1.Checked)
+                else if(fullName == p_nev[i] && radioButton1.Checked)
                 {
               
                     index = i;
@@ -176,6 +188,11 @@ namespace pizza_tm
         {
             nevjegy form2 = new nevjegy();
             form2.Show();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
         
