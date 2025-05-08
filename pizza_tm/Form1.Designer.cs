@@ -58,6 +58,7 @@
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.colorDialog2 = new System.Windows.Forms.ColorDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.button2 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
@@ -98,14 +99,14 @@
             // mentésMáskéntToolStripMenuItem
             // 
             this.mentésMáskéntToolStripMenuItem.Name = "mentésMáskéntToolStripMenuItem";
-            this.mentésMáskéntToolStripMenuItem.Size = new System.Drawing.Size(303, 24);
-            this.mentésMáskéntToolStripMenuItem.Text = "Mentés Másként(under construction)";
+            this.mentésMáskéntToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.mentésMáskéntToolStripMenuItem.Text = "Mentés Másként";
             this.mentésMáskéntToolStripMenuItem.Click += new System.EventHandler(this.mentésMáskéntToolStripMenuItem_Click);
             // 
             // törlésToolStripMenuItem
             // 
             this.törlésToolStripMenuItem.Name = "törlésToolStripMenuItem";
-            this.törlésToolStripMenuItem.Size = new System.Drawing.Size(303, 24);
+            this.törlésToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.törlésToolStripMenuItem.Text = "Tiszta lap";
             this.törlésToolStripMenuItem.Click += new System.EventHandler(this.törlésToolStripMenuItem_Click);
             // 
@@ -120,6 +121,7 @@
             this.menüToolStripMenuItem.Name = "menüToolStripMenuItem";
             this.menüToolStripMenuItem.Size = new System.Drawing.Size(55, 23);
             this.menüToolStripMenuItem.Text = "Menü";
+            this.menüToolStripMenuItem.Click += new System.EventHandler(this.menüToolStripMenuItem_Click);
             // 
             // rendelésToolStripMenuItem
             // 
@@ -141,21 +143,21 @@
             // szövegtípusToolStripMenuItem
             // 
             this.szövegtípusToolStripMenuItem.Name = "szövegtípusToolStripMenuItem";
-            this.szövegtípusToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
-            this.szövegtípusToolStripMenuItem.Text = "Szövegtípus";
+            this.szövegtípusToolStripMenuItem.Size = new System.Drawing.Size(226, 24);
+            this.szövegtípusToolStripMenuItem.Text = "Szövegtípus (összegzés)";
             this.szövegtípusToolStripMenuItem.Click += new System.EventHandler(this.szövegtípusToolStripMenuItem_Click);
             // 
             // háttérképToolStripMenuItem
             // 
             this.háttérképToolStripMenuItem.Name = "háttérképToolStripMenuItem";
-            this.háttérképToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.háttérképToolStripMenuItem.Size = new System.Drawing.Size(226, 24);
             this.háttérképToolStripMenuItem.Text = "Háttérkép";
             this.háttérképToolStripMenuItem.Click += new System.EventHandler(this.háttérképToolStripMenuItem_Click);
             // 
             // háttérszínToolStripMenuItem
             // 
             this.háttérszínToolStripMenuItem.Name = "háttérszínToolStripMenuItem";
-            this.háttérszínToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.háttérszínToolStripMenuItem.Size = new System.Drawing.Size(226, 24);
             this.háttérszínToolStripMenuItem.Text = "Háttérszín";
             this.háttérszínToolStripMenuItem.Click += new System.EventHandler(this.háttérszínToolStripMenuItem_Click);
             // 
@@ -167,14 +169,16 @@
             this.súgóToolStripMenuItem.Name = "súgóToolStripMenuItem";
             this.súgóToolStripMenuItem.Size = new System.Drawing.Size(50, 23);
             this.súgóToolStripMenuItem.Text = "Súgó";
+            this.súgóToolStripMenuItem.Click += new System.EventHandler(this.súgóToolStripMenuItem_Click);
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.OldLace;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label1.Font = new System.Drawing.Font("Pristina", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(368, 36);
+            this.label1.Location = new System.Drawing.Point(362, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(104, 41);
             this.label1.TabIndex = 1;
@@ -182,6 +186,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox1.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.comboBox1.ForeColor = System.Drawing.SystemColors.MenuText;
             this.comboBox1.FormattingEnabled = true;
@@ -192,6 +197,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Pristina", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -204,6 +210,7 @@
             // 
             // numericUpDown1
             // 
+            this.numericUpDown1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.numericUpDown1.Location = new System.Drawing.Point(191, 183);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(175, 20);
@@ -211,6 +218,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Pristina", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -222,6 +230,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Pristina", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -233,6 +242,7 @@
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Pristina", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -244,6 +254,7 @@
             // 
             // textBox1
             // 
+            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBox1.Location = new System.Drawing.Point(185, 285);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
@@ -252,9 +263,10 @@
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Pristina", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(599, 109);
+            this.label6.Location = new System.Drawing.Point(553, 116);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(71, 29);
             this.label6.TabIndex = 15;
@@ -262,16 +274,18 @@
             // 
             // listBox1
             // 
+            this.listBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.listBox1.BackColor = System.Drawing.Color.Silver;
             this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(510, 141);
+            this.listBox1.Location = new System.Drawing.Point(481, 148);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(234, 275);
             this.listBox1.TabIndex = 16;
             // 
             // radioButton1
             // 
+            this.radioButton1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radioButton1.AutoSize = true;
             this.radioButton1.BackColor = System.Drawing.Color.Transparent;
             this.radioButton1.Location = new System.Drawing.Point(208, 235);
@@ -284,6 +298,7 @@
             // 
             // radioButton2
             // 
+            this.radioButton2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radioButton2.AutoSize = true;
             this.radioButton2.BackColor = System.Drawing.Color.Transparent;
             this.radioButton2.Location = new System.Drawing.Point(301, 235);
@@ -296,6 +311,7 @@
             // 
             // button1
             // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button1.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
@@ -313,12 +329,29 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // button2
+            // 
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button2.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.button2.Font = new System.Drawing.Font("Pristina", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.Red;
+            this.button2.Location = new System.Drawing.Point(721, 148);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(88, 39);
+            this.button2.TabIndex = 20;
+            this.button2.Text = "Törlés";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(886, 446);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
@@ -336,6 +369,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
@@ -376,6 +410,7 @@
         private System.Windows.Forms.FontDialog fontDialog1;
         private System.Windows.Forms.ColorDialog colorDialog2;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Button button2;
     }
 }
 
