@@ -15,6 +15,8 @@ namespace pizza_tm
         public Loading()
         {
             InitializeComponent();
+    
+            timer1.Start();
             
 
         }
