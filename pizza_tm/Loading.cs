@@ -15,16 +15,16 @@ namespace pizza_tm
         public Loading()
         {
             InitializeComponent();
-    
+            progressBar1.Margin = new Padding(0);
+            progressBar1.Padding = new Padding(0);
             timer1.Start();
             
 
         }
 
-        private void Loading_Load(object sender, EventArgs e)
-        {
+    
 
-        }
+
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -34,10 +34,16 @@ namespace pizza_tm
             if (progressBar1.Value == 100)
             {
                 timer1 .Enabled = false;
-                Form1 form=new Form1();
+                 Form1 form = new Form1();
                 form.Show();
                 this.Hide();
+                
             }
         }
+
+    private void progressBar1_Click(object sender, EventArgs e)
+    {
+
     }
+  }
 }

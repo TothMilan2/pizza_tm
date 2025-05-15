@@ -31,7 +31,9 @@ namespace pizza_tm
         {
 
             InitializeComponent();
-            string FilePath = "pizza.txt";
+
+
+      string FilePath = "pizza.txt";
             try
             {
                 using (StreamReader reader = new StreamReader(FilePath))
@@ -290,7 +292,7 @@ namespace pizza_tm
         {
             MessageBox.Show("1. Válassza ki pizzáját \n" +
                 "2. Véglegesítse\n" +
-                "3. Mentse el a fájlra kattintva\n");
+                "3. Mentse el a fájlra kattintva\n"+"4. Erősen ajánlott a kilépés gombra kattintani a teljes programleállás érdekében!");
         }
 
         private void menüToolStripMenuItem_Click(object sender, EventArgs e)
@@ -316,7 +318,29 @@ namespace pizza_tm
             }
 
         }
+
+    private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
     }
+    public void Shutdown()
+    {
+
+
+      // Now exit the application completely
+      Environment.Exit(0);  // Forces the process to exit immediately
+    }
+    private void button3_Click(object sender, EventArgs e)
+    {
+      Shutdown(); // Your cleanup method
+    }
+   
+    
+    private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+    {
+      
+    }
+  }
    
 
 
