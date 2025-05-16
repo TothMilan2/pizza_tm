@@ -332,7 +332,7 @@ namespace pizza_tm
     }
     private void button3_Click(object sender, EventArgs e)
     {
-      Shutdown(); // Your cleanup method
+      Application.Exit();
     }
    
     
