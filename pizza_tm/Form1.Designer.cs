@@ -127,7 +127,7 @@
             // rendelésToolStripMenuItem
             // 
             this.rendelésToolStripMenuItem.Name = "rendelésToolStripMenuItem";
-            this.rendelésToolStripMenuItem.Size = new System.Drawing.Size(144, 24);
+            this.rendelésToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.rendelésToolStripMenuItem.Text = "Rendelés";
             this.rendelésToolStripMenuItem.Click += new System.EventHandler(this.rendelésToolStripMenuItem_Click);
             // 
@@ -138,7 +138,7 @@
             this.háttérképToolStripMenuItem,
             this.háttérszínToolStripMenuItem});
             this.kapcsolatToolStripMenuItem.Name = "kapcsolatToolStripMenuItem";
-            this.kapcsolatToolStripMenuItem.Size = new System.Drawing.Size(144, 24);
+            this.kapcsolatToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.kapcsolatToolStripMenuItem.Text = "Beállítások";
             // 
             // szövegtípusToolStripMenuItem
@@ -267,6 +267,7 @@
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Pristina", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(690, 203);
             this.label6.Name = "label6";

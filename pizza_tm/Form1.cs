@@ -135,8 +135,16 @@ namespace pizza_tm
                        
                         
                     }
-                    MessageBox.Show("Mentve");
-                    writer.WriteLine($"Megjegyzés: {megjegyzes}");
+                    DialogResult result = MessageBox.Show("Biztos hogy elmenti?", "", MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
+                    {
+                        writer.WriteLine($"Megjegyzés: {megjegyzes}");
+                    }
+                    else if (result == DialogResult.No)
+                    {
+                        MessageBox.Show("You clicked No!");
+                    }
+                    
                 }
             }
             catch (Exception ex)
@@ -264,7 +272,7 @@ namespace pizza_tm
 
         private void háttérképToolStripMenuItem_Click(object sender, EventArgs e)
         {
-                    
+       
         openFileDialog1.Filter = "Képek (*.png)|*.png|Minden fájl (*.*)|*.*";
                     openFileDialog1.FilterIndex = 1;
                     openFileDialog1.Multiselect = true;
@@ -276,6 +284,7 @@ namespace pizza_tm
                         }
                         this.BackgroundImage = Image.FromFile(openFileDialog1.FileNames[0]);
                         backgroundSet = true;
+                        this.BackColor = default;
             }
                 
                 
