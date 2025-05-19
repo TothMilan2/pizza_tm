@@ -23,7 +23,6 @@ namespace pizza_tm
         public static List<string> p_nev = new List<string>();
         public static List<string> p_forint = new List<string>();
         public static List<int> p_ar = new List<int>();
-        int plusszar = 0;
         public static string[] adatok = new string[0];
         private bool backgroundSet = false;
    
@@ -77,7 +76,7 @@ namespace pizza_tm
 
             //Mennyiség:
             int mennyiseg = Convert.ToInt32(numericUpDown1.Value);
-            int plusszar = 0;
+            
 
 
             for (int i = 0; i < p_nev.Count; i++)

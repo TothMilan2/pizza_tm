@@ -13,17 +13,18 @@ namespace pizza_tm
 {
     public partial class Loading : Form
     {
-        int elapsedTime = 0;
+      
         public Loading()
         {
             InitializeComponent();
             progressBar1.Margin = new Padding(0);
             progressBar1.Padding = new Padding(0);
             timer1.Start();
+            timer2.Start();
             label2.Visible = false;
             label5.Visible = false;
             label6.Visible = false;
-            timer2.Start();
+          
 
 
         }
@@ -41,7 +42,8 @@ namespace pizza_tm
             if (progressBar1.Value == 100)
             {
                 timer1 .Enabled = false;
-                 Form1 form = new Form1();
+          
+                Form1 form = new Form1();
                 form.Show();
                 this.Hide();
                 
@@ -57,30 +59,33 @@ namespace pizza_tm
 
         private void timer2_Tick(object sender, EventArgs e)
         {
-            timer2.Enabled = true;
-            elapsedTime += 1;
-            while (progressBar1.Value!=100)
-            {
+                timer2.Enabled = true;
+
+           
          
-                if (elapsedTime == 1)
+                if (progressBar1.Value == 20)
                 {
-                    label1.Visible = true;
+                    label2.Visible = true;
                 }
                     
 
-                else if (elapsedTime == 2)
+                else if (progressBar1.Value == 50)
                 {
                     label5.Visible = true;
                 }
                    
 
-                else if (elapsedTime == 3)
+                else if (progressBar1.Value == 80)
                 {
                     label6.Visible = true;
                 }
-                    
+            else if (progressBar1.Value == 100)
+            {
+                timer2.Enabled = false;
             }
-            timer1 .Enabled = false;
+                    
+            
+           
                 
             
             
