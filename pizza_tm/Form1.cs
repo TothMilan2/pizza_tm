@@ -141,7 +141,7 @@ namespace pizza_tm
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Helo");
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -179,7 +179,7 @@ namespace pizza_tm
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Helo");
+                    MessageBox.Show(ex.Message);
                 }
             }
         }
@@ -220,6 +220,28 @@ namespace pizza_tm
                         radioButton2.ForeColor = Color.White;
                     }
                     if (colorDialog1.Color == Color.White)
+                    {
+
+                        label2.ForeColor = Color.Black;
+                        label3.ForeColor = Color.Black;
+                        label4.ForeColor = Color.Black;
+                        label5.ForeColor = Color.Black;
+                        label6.ForeColor = Color.Black;
+                        radioButton1.ForeColor = Color.Black;
+                        radioButton2.ForeColor = Color.Black;
+                    }
+                    if (colorDialog1.Color == Color.DarkGray)
+                    {
+
+                        label2.ForeColor = Color.Black;
+                        label3.ForeColor = Color.Black;
+                        label4.ForeColor = Color.Black;
+                        label5.ForeColor = Color.Black;
+                        label6.ForeColor = Color.Black;
+                        radioButton1.ForeColor = Color.Black;
+                        radioButton2.ForeColor = Color.Black;
+                    }
+                    if (colorDialog1.Color == Color.LightGray)
                     {
 
                         label2.ForeColor = Color.Black;

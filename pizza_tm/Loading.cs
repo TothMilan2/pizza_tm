@@ -20,11 +20,11 @@ namespace pizza_tm
             progressBar1.Margin = new Padding(0);
             progressBar1.Padding = new Padding(0);
             timer1.Start();
-            timer2.Start();
+         
             label2.Visible = false;
             label5.Visible = false;
             label6.Visible = false;
-          
+            timer2.Start();
 
 
         }
@@ -61,34 +61,27 @@ namespace pizza_tm
         {
                 timer2.Enabled = true;
 
-           
-         
-                if (progressBar1.Value == 20)
-                {
-                    label2.Visible = true;
-                }
-                    
 
-                else if (progressBar1.Value == 50)
-                {
-                    label5.Visible = true;
-                }
-                   
 
-                else if (progressBar1.Value == 80)
-                {
-                    label6.Visible = true;
-                }
-            else if (progressBar1.Value == 100)
-            {
+            if (progressBar1.Value >= 20)
+                label2.Visible = true;
+
+            if (progressBar1.Value >= 50)
+                label5.Visible = true;
+
+            if (progressBar1.Value >= 80)
+                label6.Visible = true;
+
+            if (progressBar1.Value >= 100)
                 timer2.Enabled = false;
-            }
-                    
-            
-           
-                
-            
-            
+
+
+
+
+
+
+
+
 
         }
 
