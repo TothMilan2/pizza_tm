@@ -63,10 +63,13 @@ namespace pizza_tm
             GraphicsPath p = new GraphicsPath();
             p.AddEllipse(2, 2, button2.Width - 5, button2.Height - 8);
             button2.Region = new Region(p);
-           
+            this.FormClosed += MainForm_FormClosed;
         }
 
-        
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -164,6 +167,7 @@ namespace pizza_tm
             radioButton1.Checked = false;
             radioButton2.Checked = false;
             textBox1.Text = string.Empty;
+            this.BackgroundImage = null;
 
         }
 
@@ -214,55 +218,13 @@ namespace pizza_tm
 
         private void háttérszínToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (backgroundSet != true)
+            if (this.BackgroundImage==null)
             {
                 if (colorDialog1.ShowDialog() == DialogResult.OK)
                 {
+                    
                     this.BackColor = colorDialog1.Color;
-                    if (colorDialog1.Color == Color.Black)
-                    {
-
-                        label2.ForeColor = Color.White;
-                        label3.ForeColor = Color.White;
-                        label4.ForeColor = Color.White;
-                        label5.ForeColor = Color.White;
-                        label6.ForeColor = Color.White;
-                        radioButton1.ForeColor = Color.White;
-                        radioButton2.ForeColor = Color.White;
-                    }
-                    if (colorDialog1.Color == Color.White)
-                    {
-
-                        label2.ForeColor = Color.Black;
-                        label3.ForeColor = Color.Black;
-                        label4.ForeColor = Color.Black;
-                        label5.ForeColor = Color.Black;
-                        label6.ForeColor = Color.Black;
-                        radioButton1.ForeColor = Color.Black;
-                        radioButton2.ForeColor = Color.Black;
-                    }
-                    if (colorDialog1.Color == Color.DarkGray)
-                    {
-
-                        label2.ForeColor = Color.Black;
-                        label3.ForeColor = Color.Black;
-                        label4.ForeColor = Color.Black;
-                        label5.ForeColor = Color.Black;
-                        label6.ForeColor = Color.Black;
-                        radioButton1.ForeColor = Color.Black;
-                        radioButton2.ForeColor = Color.Black;
-                    }
-                    if (colorDialog1.Color == Color.LightGray)
-                    {
-
-                        label2.ForeColor = Color.Black;
-                        label3.ForeColor = Color.Black;
-                        label4.ForeColor = Color.Black;
-                        label5.ForeColor = Color.Black;
-                        label6.ForeColor = Color.Black;
-                        radioButton1.ForeColor = Color.Black;
-                        radioButton2.ForeColor = Color.Black;
-                    }
+                    
 
                 }
             }
@@ -288,6 +250,12 @@ namespace pizza_tm
                         this.BackgroundImage = Image.FromFile(openFileDialog1.FileNames[0]);
                         backgroundSet = true;
                         this.BackColor = default;
+                    }
+            else
+            {
+
+                backgroundSet = false;
+                this.backgroundSet=false;
             }
                 
                 
@@ -376,9 +344,13 @@ namespace pizza_tm
 
         private void betűszínToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (colorDialog1.ShowDialog() == DialogResult.OK)
+            if (colorDialog3.ShowDialog() == DialogResult.OK)
             {
-                this.ForeColor = colorDialog1.Color;
+                
+                this.ForeColor = colorDialog3.Color;
+                button1.ForeColor = colorDialog3.Color;
+                button2.ForeColor = colorDialog3.Color;
+                label2.ForeColor = colorDialog3.Color;
                 
                 
 

@@ -37,7 +37,7 @@ namespace pizza_tm
         {
       
             timer1.Enabled = true;
-            progressBar1.Increment(5);
+            progressBar1.Increment(24);
 
             if (progressBar1.Value == 100)
             {

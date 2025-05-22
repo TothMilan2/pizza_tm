@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fájlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mentésToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -39,6 +40,7 @@
             this.szövegtípusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.háttérképToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.háttérszínToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.betűszínToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.súgóToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -60,7 +62,6 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.betűszínToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.colorDialog3 = new System.Windows.Forms.ColorDialog();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -129,7 +130,7 @@
             // rendelésToolStripMenuItem
             // 
             this.rendelésToolStripMenuItem.Name = "rendelésToolStripMenuItem";
-            this.rendelésToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.rendelésToolStripMenuItem.Size = new System.Drawing.Size(144, 24);
             this.rendelésToolStripMenuItem.Text = "Rendelés";
             this.rendelésToolStripMenuItem.Click += new System.EventHandler(this.rendelésToolStripMenuItem_Click);
             // 
@@ -141,7 +142,7 @@
             this.háttérszínToolStripMenuItem,
             this.betűszínToolStripMenuItem});
             this.kapcsolatToolStripMenuItem.Name = "kapcsolatToolStripMenuItem";
-            this.kapcsolatToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.kapcsolatToolStripMenuItem.Size = new System.Drawing.Size(144, 24);
             this.kapcsolatToolStripMenuItem.Text = "Beállítások";
             // 
             // szövegtípusToolStripMenuItem
@@ -164,6 +165,13 @@
             this.háttérszínToolStripMenuItem.Size = new System.Drawing.Size(226, 24);
             this.háttérszínToolStripMenuItem.Text = "Háttérszín";
             this.háttérszínToolStripMenuItem.Click += new System.EventHandler(this.háttérszínToolStripMenuItem_Click);
+            // 
+            // betűszínToolStripMenuItem
+            // 
+            this.betűszínToolStripMenuItem.Name = "betűszínToolStripMenuItem";
+            this.betűszínToolStripMenuItem.Size = new System.Drawing.Size(226, 24);
+            this.betűszínToolStripMenuItem.Text = "Betűszín";
+            this.betűszínToolStripMenuItem.Click += new System.EventHandler(this.betűszínToolStripMenuItem_Click);
             // 
             // súgóToolStripMenuItem
             // 
@@ -322,7 +330,7 @@
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button1.Font = new System.Drawing.Font("Pristina", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Red;
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.button1.Location = new System.Drawing.Point(331, 471);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(158, 39);
@@ -342,7 +350,7 @@
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button2.Font = new System.Drawing.Font("Pristina", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Red;
+            this.button2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.button2.Location = new System.Drawing.Point(858, 235);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(88, 39);
@@ -361,13 +369,6 @@
             this.button3.Text = "Kilépés";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // betűszínToolStripMenuItem
-            // 
-            this.betűszínToolStripMenuItem.Name = "betűszínToolStripMenuItem";
-            this.betűszínToolStripMenuItem.Size = new System.Drawing.Size(226, 24);
-            this.betűszínToolStripMenuItem.Text = "Betűszín";
-            this.betűszínToolStripMenuItem.Click += new System.EventHandler(this.betűszínToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -391,9 +392,10 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Pizza";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
