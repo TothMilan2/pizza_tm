@@ -125,32 +125,35 @@ namespace pizza_tm
             
             string megjegyzes = textBox1.Text.ToString();
             string filePath2 = "rendeles.txt";
-            try
+            DialogResult result = MessageBox.Show("Biztos hogy elmenti?", "", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
             {
-                using (StreamWriter writer = new StreamWriter(filePath2))
+                try
                 {
-                    for (int i = 0; i < listBox1.Items.Count; i++)
+                    using (StreamWriter writer = new StreamWriter(filePath2))
                     {
-                        writer.WriteLine(listBox1.Items[i]);
-                       
-                        
+                        for (int i = 0; i < listBox1.Items.Count; i++)
+                        {
+                            writer.WriteLine(listBox1.Items[i]);
+
+
+
+                        }
+
+
                     }
-                    DialogResult result = MessageBox.Show("Biztos hogy elmenti?", "", MessageBoxButtons.YesNo);
-                    if (result == DialogResult.Yes)
-                    {
-                        writer.WriteLine($"Megjegyzés: {megjegyzes}");
-                    }
-                    else if (result == DialogResult.No)
-                    {
-                        MessageBox.Show("You clicked No!");
-                    }
-                    
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
                 }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
+
+                MessageBox.Show("helo");
             }
+            
         }
 
         private void törlésToolStripMenuItem_Click(object sender, EventArgs e)

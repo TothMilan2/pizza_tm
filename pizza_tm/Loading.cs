@@ -24,7 +24,7 @@ namespace pizza_tm
             label2.Visible = false;
             label5.Visible = false;
             label6.Visible = false;
-            timer2.Start();
+      
 
 
         }
@@ -41,13 +41,24 @@ namespace pizza_tm
 
             if (progressBar1.Value == 100)
             {
-                timer1 .Enabled = false;
+                timer1.Enabled = false;
           
                 Form1 form = new Form1();
                 form.Show();
                 this.Hide();
                 
             }
+            if (progressBar1.Value >= 25)
+                label2.Visible = true;
+
+            if (progressBar1.Value >= 50)
+                label5.Visible = true;
+
+            if (progressBar1.Value >= 75)
+                label6.Visible = true;
+
+            if (progressBar1.Value >= 100)
+                timer2.Enabled = false;
         }
 
  
@@ -59,21 +70,11 @@ namespace pizza_tm
 
         private void timer2_Tick(object sender, EventArgs e)
         {
-                timer2.Enabled = true;
+            
 
 
 
-            if (progressBar1.Value >= 20)
-                label2.Visible = true;
-
-            if (progressBar1.Value >= 50)
-                label5.Visible = true;
-
-            if (progressBar1.Value >= 80)
-                label6.Visible = true;
-
-            if (progressBar1.Value >= 100)
-                timer2.Enabled = false;
+           
 
 
 

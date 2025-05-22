@@ -127,7 +127,7 @@
             // rendelésToolStripMenuItem
             // 
             this.rendelésToolStripMenuItem.Name = "rendelésToolStripMenuItem";
-            this.rendelésToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.rendelésToolStripMenuItem.Size = new System.Drawing.Size(144, 24);
             this.rendelésToolStripMenuItem.Text = "Rendelés";
             this.rendelésToolStripMenuItem.Click += new System.EventHandler(this.rendelésToolStripMenuItem_Click);
             // 
@@ -138,7 +138,7 @@
             this.háttérképToolStripMenuItem,
             this.háttérszínToolStripMenuItem});
             this.kapcsolatToolStripMenuItem.Name = "kapcsolatToolStripMenuItem";
-            this.kapcsolatToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.kapcsolatToolStripMenuItem.Size = new System.Drawing.Size(144, 24);
             this.kapcsolatToolStripMenuItem.Text = "Beállítások";
             // 
             // szövegtípusToolStripMenuItem
@@ -324,7 +324,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(158, 39);
             this.button1.TabIndex = 19;
-            this.button1.Text = "Véglegesít";
+            this.button1.Text = "Hozzáad";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
