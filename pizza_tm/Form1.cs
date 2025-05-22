@@ -373,7 +373,18 @@ namespace pizza_tm
     {
       
     }
-  }
+
+        private void betűszínToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
+            {
+                this.ForeColor = colorDialog1.Color;
+                
+                
+
+            }
+        }
+    }
    
 
 

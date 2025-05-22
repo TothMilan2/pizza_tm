@@ -37,7 +37,7 @@ namespace pizza_tm
         {
       
             timer1.Enabled = true;
-            progressBar1.Increment(2);
+            progressBar1.Increment(5);
 
             if (progressBar1.Value == 100)
             {
@@ -57,8 +57,7 @@ namespace pizza_tm
             if (progressBar1.Value >= 75)
                 label6.Visible = true;
 
-            if (progressBar1.Value >= 100)
-                timer2.Enabled = false;
+            
         }
 
  
