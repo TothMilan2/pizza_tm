@@ -313,9 +313,10 @@ namespace pizza_tm
 
         private void button2_Click(object sender, EventArgs e)
         {
-            while (listBox1.SelectedItems.Count > 0)
+            for (int i = listBox1.SelectedIndices.Count - 1; i >= 0; i--)
             {
-                listBox1.Items.Remove(listBox1.SelectedItem);
+                int index = listBox1.SelectedIndices[i];
+                listBox1.Items.RemoveAt(index);
             }
 
         }

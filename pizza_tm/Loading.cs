@@ -20,16 +20,25 @@ namespace pizza_tm
             progressBar1.Margin = new Padding(0);
             progressBar1.Padding = new Padding(0);
             timer1.Start();
-         
+            
             label2.Visible = false;
             label5.Visible = false;
             label6.Visible = false;
-      
-
+       
+    
 
         }
 
-    
+        private async void Form1_Load(object sender, EventArgs e)
+        {
+            // Start the timer that updates the progress bar.
+            timer2.Start();
+
+            // Start asynchronous label animation concurrently.
+            await AnimateLabelsAsync();
+        }
+
+
 
 
 
@@ -69,9 +78,9 @@ namespace pizza_tm
 
         private void timer2_Tick(object sender, EventArgs e)
         {
-            
 
-
+            timer2.Enabled = true;  
+     
 
            
 
@@ -91,6 +100,39 @@ namespace pizza_tm
         }
 
         private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+        private async Task AnimateLabelsAsync()
+        {
+            // Loop until the progress bar is complete.
+            while (progressBar1.Value < 100)
+            {
+                // Show label1 for 2 seconds.
+                label2.Visible = true;
+                await Task.Delay(2000);
+                label2.Visible = false;
+
+                // Check if the progress is complete before moving on.
+                if (progressBar1.Value >= 100)
+                    break;
+
+                // Show label2 for 2 seconds.
+                label5.Visible = true;
+                await Task.Delay(2000);
+                label5.Visible = false;
+
+                if (progressBar1.Value >= 100)
+                    break;
+
+                // Show label3 for 2 seconds.
+                label6.Visible = true;
+                await Task.Delay(2000);
+                label6.Visible = false;
+            }
+        }
+
+        private void Loading_Load(object sender, EventArgs e)
         {
 
         }
