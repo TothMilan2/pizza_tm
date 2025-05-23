@@ -130,7 +130,7 @@
             // rendelésToolStripMenuItem
             // 
             this.rendelésToolStripMenuItem.Name = "rendelésToolStripMenuItem";
-            this.rendelésToolStripMenuItem.Size = new System.Drawing.Size(144, 24);
+            this.rendelésToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.rendelésToolStripMenuItem.Text = "Rendelés";
             this.rendelésToolStripMenuItem.Click += new System.EventHandler(this.rendelésToolStripMenuItem_Click);
             // 
@@ -142,7 +142,7 @@
             this.háttérszínToolStripMenuItem,
             this.betűszínToolStripMenuItem});
             this.kapcsolatToolStripMenuItem.Name = "kapcsolatToolStripMenuItem";
-            this.kapcsolatToolStripMenuItem.Size = new System.Drawing.Size(144, 24);
+            this.kapcsolatToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.kapcsolatToolStripMenuItem.Text = "Beállítások";
             // 
             // szövegtípusToolStripMenuItem
@@ -190,6 +190,7 @@
             this.label1.BackColor = System.Drawing.Color.OldLace;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label1.Font = new System.Drawing.Font("Pristina", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(496, 37);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(104, 41);
@@ -361,7 +362,9 @@
             // 
             // button3
             // 
+            this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button3.ForeColor = System.Drawing.Color.Black;
             this.button3.Location = new System.Drawing.Point(529, 579);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(126, 29);

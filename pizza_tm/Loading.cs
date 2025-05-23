@@ -24,8 +24,8 @@ namespace pizza_tm
             label2.Visible = false;
             label5.Visible = false;
             label6.Visible = false;
-       
-    
+            this.WindowState = FormWindowState.Maximized;
+
 
         }
 

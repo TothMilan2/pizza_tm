@@ -30,9 +30,9 @@ namespace pizza_tm
         {
 
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
 
-
-      string FilePath = "pizza.txt";
+            string FilePath = "pizza.txt";
             try
             {
                 using (StreamReader reader = new StreamReader(FilePath))
@@ -131,6 +131,7 @@ namespace pizza_tm
             DialogResult result = MessageBox.Show("Biztos hogy elmenti?", "", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
+               
                 try
                 {
                     using (StreamWriter writer = new StreamWriter(filePath2))
@@ -349,8 +350,7 @@ namespace pizza_tm
             {
                 
                 this.ForeColor = colorDialog3.Color;
-                button1.ForeColor = colorDialog3.Color;
-                button2.ForeColor = colorDialog3.Color;
+
                 label2.ForeColor = colorDialog3.Color;
                 
                 
