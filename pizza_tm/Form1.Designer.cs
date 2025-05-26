@@ -130,8 +130,8 @@
             // rendelésToolStripMenuItem
             // 
             this.rendelésToolStripMenuItem.Name = "rendelésToolStripMenuItem";
-            this.rendelésToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
-            this.rendelésToolStripMenuItem.Text = "Rendelés";
+            this.rendelésToolStripMenuItem.Size = new System.Drawing.Size(193, 24);
+            this.rendelésToolStripMenuItem.Text = "Rendelés betöltése";
             this.rendelésToolStripMenuItem.Click += new System.EventHandler(this.rendelésToolStripMenuItem_Click);
             // 
             // kapcsolatToolStripMenuItem
@@ -142,7 +142,7 @@
             this.háttérszínToolStripMenuItem,
             this.betűszínToolStripMenuItem});
             this.kapcsolatToolStripMenuItem.Name = "kapcsolatToolStripMenuItem";
-            this.kapcsolatToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.kapcsolatToolStripMenuItem.Size = new System.Drawing.Size(193, 24);
             this.kapcsolatToolStripMenuItem.Text = "Beállítások";
             // 
             // szövegtípusToolStripMenuItem
