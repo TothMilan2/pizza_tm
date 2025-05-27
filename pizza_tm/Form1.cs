@@ -2,17 +2,20 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.IO;
 using System.IO.Ports;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Security.Policy;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using static System.Net.Mime.MediaTypeNames;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace pizza_tm
@@ -25,6 +28,8 @@ namespace pizza_tm
         public static List<int> p_ar = new List<int>();
         public static string[] adatok = new string[0];
         private bool backgroundSet = false;
+        public double ar;
+        public double vegosszeg;
    
         public Form1()
         {
@@ -79,7 +84,8 @@ namespace pizza_tm
 
             //Mennyiség:
             int mennyiseg = Convert.ToInt32(numericUpDown1.Value);
-            
+
+
 
 
             for (int i = 0; i < p_nev.Count; i++)
@@ -89,12 +95,14 @@ namespace pizza_tm
                     index = i;
                     if (mennyiseg != 0 && radioButton1.Checked)
                     {
-                        listBox1.Items.Add("- "+p_nev[index] + " " + mennyiseg + " " + "db" + "24cm" + " " + p_ar[index] * mennyiseg + " " + p_forint[i]);
+                         ar = p_ar[index]*mennyiseg;
+                        listBox1.Items.Add("- "+p_nev[index] + " " + mennyiseg + " " + "db" + "24cm" + " " + ar+ " " + p_forint[i]);
                     }
 
                     else if (mennyiseg != 0 && radioButton2.Checked)
                     {
-                        listBox1.Items.Add("- " + p_nev[index] + " " + mennyiseg + " " + "db" + "32cm" + " " + p_ar[index] * mennyiseg * 1.5 + " " + p_forint[i]);
+                         ar = p_ar[index] * mennyiseg*1.5;
+                        listBox1.Items.Add("- " + p_nev[index] + " " + mennyiseg + " " + "db" + "32cm" + " " + ar + " " + p_forint[i]);
                     }
                     else if (!radioButton1.Checked && !radioButton2.Checked)
                     {
@@ -143,7 +151,8 @@ namespace pizza_tm
 
 
                         }
-
+                        writer.WriteLine($"Megjegyzés: {megjegyzes}");
+                        writer.WriteLine($"Végösszeg: {vegosszeg}");
 
                     }
                 }
@@ -355,6 +364,29 @@ namespace pizza_tm
                 
                 
 
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Biztos vagy benne hogy jó helyen jársz?", "", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                DialogResult result2 = MessageBox.Show("Nem szeretnél inkább pizzát rendelni?", "", MessageBoxButtons.YesNo);
+                if (result2 == DialogResult.No)
+                {
+                    MessageBox.Show("Hát jó.....te akartad");
+                    MessageBox.Show("Egy titkos kupon került jóváírásra, ami a végösszegből levonásra kerül");
+
+                    
+
+
+                }
+               
+            }
+            else
+            {
+                MessageBox.Show("Szerintem is");
             }
         }
     }
